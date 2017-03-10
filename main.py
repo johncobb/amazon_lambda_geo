@@ -86,23 +86,17 @@ if __name__ == "__main__":
     geofence = load_geofence()
     scan = load_scan()
 
-    #print landmark['landmark']['lat']
-    
-    
-    #polygon = [geofence['fence']['latsw'], geofence['fence']['latne'], geofence['fence']['lngsw'], geofence['fence']['lngne']]
-    #polygon = [(geofence['fence']['latsw'], geofence['fence']['latne']),(geofence['fence']['lngsw'], geofence['fence']['lngne'])]
-    polygon = [(geofence['fence']['latsw'], geofence['fence']['lngsw']),(geofence['fence']['latne'], geofence['fence']['lngne'])]
-    
-    #point = [scan['scan']['lat'], scan['scan']['lng']]
+    #polygon = [(geofence['fence']['latsw'], geofence['fence']['lngsw']),(geofence['fence']['latne'], geofence['fence']['lngne'])]
+    polygon = [(37.98993962366689, 87.4405288696289), (37.94690492842903, 87.36705780029297)]
 
-    point = [37.96747811844134, -87.35160827636719]
+    #point = [scan['scan']['lat'], scan['scan']['lng']]
+    point = [float(37.96747811844134), float(87.35160827636719)]
 
     print polygon
     print point
 
-    #hit = point_in_poly(point[0], point[1], polygon)
+    hit = point_in_poly(point[0], point[1], polygon)
 
-    hit = point_in_poly(37.96747811844134, -87.35160827636719, polygon)
     print hit
     #print json.dumps(landmark)
     #print json.dumps(geofence)
